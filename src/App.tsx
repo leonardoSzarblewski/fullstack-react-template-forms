@@ -6,6 +6,7 @@ type FormData = {
   name: string;
   date: string;
   subject: string;
+  descripton: string;
 };
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       name: "",
       date: "",
       subject: "",
+      descripton: "",
     },
   });
 
@@ -61,7 +63,13 @@ export default function App() {
           )}
         />
 
-        <textarea placeholder="Descrição" rows={4} />
+        <Controller
+          control={control}
+          name="descripton"
+          render={({ field }) => (
+            <textarea placeholder="Descrição" rows={4} {...field} />
+          )}
+        />
 
         <button type="submit">Salvar</button>
       </form>
